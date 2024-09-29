@@ -42,19 +42,21 @@ A buffer can be seen as a storage mechanism based on RAM. Instead of waiting for
 
 Buffer_Size refers to the amount of RAM allocated for the buffer. It determines how much data the buffer can hold at one time during data transfer or processing.<br>
 
-## Headfile
+## Macro
+Macro has no type; it is purely a text substitution mechanism performed by the preprocessor before the actual compilation of the code.<br>
+
 ### Header file protection
 #ifndef GET_NEXT_LINE_H<br>
 `#`  define GET_NEXT_LINE_H<br>
 #endif<br>
+
 The name GET_NEXT_LINE_H is indeed related to the header file, but it serves a specific purpose as a macro name in the context of header file protection. <br>
 The line #define GET_NEXT_LINE_H defines GET_NEXT_LINE_H as a preprocessor macro. This macro acts as a flag to indicate whether the header file has already been included in the current compilation unit.<br>
 When the header file is included for the first time, GET_NEXT_LINE_H is not defined, allowing the contents of the header file to be processed. On subsequent inclusions, the macro is already defined, so the contents are skipped.<br>
 
-### Macro
-Macro has no type; it is purely a text substitution mechanism performed by the preprocessor before the actual compilation of the code.<br>
-
+### Macro definition
 #ifndef BUFFER_SIZE<br>
 `#`  define BUFFER_SIZE 10<br>
 #endif<br>
+
 This means that wherever BUFFER_SIZE appears in the code, the preprocessor will replace it with the value 10 during the preprocessing stage, before the code is compiled.<br>
