@@ -17,7 +17,7 @@ Every process starts with three standard file descriptors by default:
 When a process opens more files or resources, they are assigned new file descriptors (starting from 3 and increasing). These can be for reading and writing to files, network connections, pipes, or other I/O streams.<br>
 
 The process interacts with them using system calls (e.g., open(), read(), write(), close()), and the OS uses the file descriptor table to keep track of these open files for each process.<br>
-### related shell commands
+### Related shell commands
 tty: display the file name of the terminal connected to the standard input (stdin).<br>
 
 la: ls -a, list all files, including hidden ones (files that start with a .) in the current directory.<br>
