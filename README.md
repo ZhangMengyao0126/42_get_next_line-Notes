@@ -5,7 +5,7 @@ Linux abstracts and treats most system resources (like hardware devices, directo
 
 ## file descriptor
 ### File Descriptors (FDs)
-A file descriptor is an integer that represents an open file or file-like object in a process. This file could be a regular file, a device (like /dev/tty), or even network sockets, pipes, etc.<br>
+A file descriptor is an integer that represents an open file or file-like object in a process. This file could be a regular file, a device (like /dev/ttys001, /dev/ttys002), or even network sockets, pipes, etc.<br>
 The process uses file descriptors to interact with these objects, and the operating system manages these file descriptors in a per-process file descriptor table.<br>
 ### Standard File Descriptors (FDs 0, 1, 2)
 Every process starts with three standard file descriptors by default:
