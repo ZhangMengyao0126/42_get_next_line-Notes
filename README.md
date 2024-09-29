@@ -43,7 +43,7 @@ A buffer can be seen as a storage mechanism based on RAM. Instead of waiting for
 Buffer_Size refers to the amount of RAM allocated for the buffer. It determines how much data the buffer can hold at one time during data transfer or processing.<br>
 
 ## Macro
-Macro has no type; it is purely a text substitution mechanism performed by the preprocessor before the actual compilation of the code. Macros do not necessarily need to have an associated value.<br>
+Macros have no type; They are purely a text substitution mechanism performed by the preprocessor before the actual compilation of the code. Macros do not necessarily need to have an associated value.<br>
 
 ### Header file protection
 #ifndef GET_NEXT_LINE_H<br>
