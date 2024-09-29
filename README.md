@@ -42,3 +42,10 @@ A buffer can be seen as a storage mechanism based on RAM. Instead of waiting for
 
 Buffer_Size refers to the amount of RAM allocated for the buffer. It determines how much data the buffer can hold at one time during data transfer or processing.<br>
 
+## Macro
+Macro has no type; it is purely a text substitution mechanism performed by the preprocessor before the actual compilation of the code.<br>
+
+#ifndef BUFFER_SIZE<br>
+#  define BUFFER_SIZE 10<br>
+#endif<br>
+This means that wherever BUFFER_SIZE appears in the code, the preprocessor will replace it with the value 10 during the preprocessing stage, before the code is compiled.<br>
