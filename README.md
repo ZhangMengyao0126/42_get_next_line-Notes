@@ -15,3 +15,8 @@ Every process starts with three standard file descriptors by default:
 ### Additional File Descriptors
 When a process opens more files or resources, they are assigned new file descriptors (starting from 3 and increasing). These can be for reading and writing to files, network connections, pipes, or other I/O streams.<br>
 The process interacts with them using system calls (e.g., open(), read(), write(), close()), and the OS uses the file descriptor table to keep track of these open files for each process.<br>
+### related shell commands
+tty: display the file name of the terminal connected to the standard input (stdin).<br>
+la: ls -a, list all files, including hidden ones (files that start with a .) in the current directory.<br>
+ps: display information about the currently running processes on the system. It stands for process status and provides details such as process IDs (PID: the system will give every executing process a numerical ID), the terminal associated with the processes, CPU usage, memory consumption, and more.<br>
+lsof -p 1800: list all open files associated with the process with the PID (Process ID) 1800.<br>
