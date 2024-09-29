@@ -46,6 +46,6 @@ Buffer_Size refers to the amount of RAM allocated for the buffer. It determines 
 Macro has no type; it is purely a text substitution mechanism performed by the preprocessor before the actual compilation of the code.<br>
 
 #ifndef BUFFER_SIZE<br>
-#  define BUFFER_SIZE 10<br>
+'#'  define BUFFER_SIZE 10<br>
 #endif<br>
 This means that wherever BUFFER_SIZE appears in the code, the preprocessor will replace it with the value 10 during the preprocessing stage, before the code is compiled.<br>
