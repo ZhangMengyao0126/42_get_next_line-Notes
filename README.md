@@ -3,7 +3,7 @@
 ## Everyting is a file
 Linux abstracts and treats most system resources (like hardware devices, directories, and even processes) as files.<br>
 
-## file descriptor
+## File descriptor
 ### File Descriptors (FDs)
 A file descriptor is an integer that represents an open file or file-like object in a process. This file could be a regular file, a device (like /dev/ttys001, /dev/ttys002), or even network sockets, pipes, etc.<br>
 
@@ -35,5 +35,10 @@ RAM Modules: RAM is typically packaged in modules known as DIMMs (Dual Inline Me
 RAM Chips:<br>
 Each RAM module contains several chips, often made of silicon. These chips are the actual memory cells that store data. Common types include:<br>
 DRAM (Dynamic RAM): Requires periodic refreshing to maintain data.<br>
+
+## Buffer
+A storage mechanism based on RAM. Instead of waiting for the full dataset to be loaded from the slower hard disk, the buffer preloads small chunks of data, allowing the process to retrieve and work with this portion of data without waiting for the entire dataset to be read from the disk.<br>
+
+Buffer_Size refers to the amount of RAM allocated for the buffer. It determines how much data the buffer can hold at one time during data transfer or processing.<br>
 SRAM (Static RAM): Faster and more reliable but more expensive; used in cache memory.<br>
 
