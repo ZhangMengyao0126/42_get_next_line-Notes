@@ -25,3 +25,15 @@ la: ls -a, list all files, including hidden ones (files that start with a .) in 
 ps: display information about the currently running processes on the system. It stands for process status and provides details such as process IDs (PID: the system will give every executing process a numerical ID), the terminal associated with the processes, CPU usage, memory consumption, and more.<br>
 
 lsof -p 1800: list all open files associated with the process with the PID (Process ID) 1800.<br>
+
+## RAM (Random Access Memory)
+RAM is the CPU's working area, which is used to temporarily store the operating system, applications, and data currently in use. When a program ends or the device loses power, the RAM will be cleared. Note: When creating a virtual machine, setting RAM is equivalent to setting Base Memory.<br>
+
+RAM Hardware:<br>
+RAM Modules: RAM is typically packaged in modules known as DIMMs (Dual Inline Memory Modules) for desktops and SO-DIMMs (Small Outline DIMMs) for laptops. These modules contain multiple RAM chips mounted on a circuit board.<br>
+
+RAM Chips:<br>
+Each RAM module contains several chips, often made of silicon. These chips are the actual memory cells that store data. Common types include:<br>
+DRAM (Dynamic RAM): Requires periodic refreshing to maintain data.<br>
+SRAM (Static RAM): Faster and more reliable but more expensive; used in cache memory.<br>
+
