@@ -37,7 +37,7 @@ Each RAM module contains several chips, often made of silicon. These chips are t
 DRAM (Dynamic RAM): Requires periodic refreshing to maintain data.<br>
 
 ## Buffer
-A storage mechanism based on RAM. Instead of waiting for the full dataset to be loaded from the slower hard disk, the buffer preloads small chunks of data, allowing the process to retrieve and work with this portion of data without waiting for the entire dataset to be read from the disk.<br>
+A buffer can be seen as a storage mechanism based on RAM. Instead of waiting for the full dataset to be loaded from the slower hard disk, the buffer preloads small chunks of data, allowing the process to retrieve and work with this portion of data without waiting for the entire dataset to be read from the disk.<br>
 
 Buffer_Size refers to the amount of RAM allocated for the buffer. It determines how much data the buffer can hold at one time during data transfer or processing.<br>
 SRAM (Static RAM): Faster and more reliable but more expensive; used in cache memory.<br>
