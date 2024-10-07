@@ -60,3 +60,10 @@ When the header file is included for the first time, GET_NEXT_LINE_H is not defi
 #endif<br>
 
 This means that wherever BUFFER_SIZE appears in the code, the preprocessor will replace it with the value 10 during the preprocessing stage, before the code is compiled.<br>
+
+## Concatenate(cat)
+cat will read the contents of files **sequentially** and print them to the terminal or another output destination.<br>
+1. cat file1.txt<br>
+This command will simply display the content of file1.txt on the terminal. Cause the default value of cat command is like cat file1.txt > /dev/tty<br>
+2. cat file1.txt file2.txt > combined.txt<br>
+This command will concatenate the contents of file1.txt and file2.txt and save the output into a new file called combined.txt. If you don't specify an output file, it simply prints the combined contents to the terminal.<br>
