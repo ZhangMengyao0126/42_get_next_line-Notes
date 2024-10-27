@@ -18,7 +18,7 @@ static char *ft_read_buf(int fd, char *read_buf), used to read from the file des
 static char *ft_get_oneline(char *read buf), used to extract the first line (up to and including the newline character) from read_buf.
 
 4. Subfunction for ft_to_nextline:<br>
-static char *ft_to_nextline(char *read_buf), used to 
+static char *ft_to_nextline(char *read_buf), used to jump over the already extracted line and set the index to the start of the next line.
 
 ## Everything is a file
 Linux abstracts and treats most system resources (like hardware devices, directories, and even processes) as files.<br>
