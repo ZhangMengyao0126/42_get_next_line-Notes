@@ -11,10 +11,10 @@ We are asked to repeatedly call (e.g., using a loop) the get_next_line() functio
 1. The main function: <br>
 char *get_next line(int fd)， used to read and return the next line from the file descriptor. The main function is basically a combination of all the subfunctions, with no new logic added.<br>
 
-3. Subfunction for ft_read_buf:<br>
+2. Subfunction for ft_read_buf:<br>
 static char *ft_read_buf(int fd, char *read_buf), used to read from the file descriptor (fd) until it encounters a newline ('\n') or reaches the end of the file.
 
-4. Subfunction for ft_get_oneline:<br>
+3. Subfunction for ft_get_oneline:<br>
 static char *ft_get_oneline(char *read buf), used to extract the first line (up to and including the newline character) from read_buf.
 
 4.Subfunction for ft_to_nextline:<br>
