@@ -9,16 +9,20 @@ We are asked to repeatedly call (e.g., using a loop) the get_next_line() functio
 
 ## The **solution** of this project
 1. The main function: <br>
-char *get_next line(int fd)， used to read and return the next line from the file descriptor. The main function is basically a combination of all the subfunctions, with no new logic added.<br>
+char *get_next_line(int fd)<br>
+The main function is basically a combination of all the subfunctions, with no new logic added.<br>
 
-2. Subfunction for ft_read_buf:<br>
-static char *ft_read_buf(int fd, char *read_buf), used to read from the file descriptor (fd) until it encounters a newline ('\n') or reaches the end of the file.
+3. Subfunction for ft_get_buffer:<br>
+static char *ft_get_buffer(int fd, char *buffer)<br>
+Set the buffer and read data until it encounters a newline ('\n') or reaches the end of the file (including our target line) from the file descriptor and adds the data to buffer.
 
-3. Subfunction for ft_get_oneline:<br>
-static char *ft_get_oneline(char *read buf), used to extract the first line (up to and including the newline character) from read_buf.
+5. Subfunction for ft_get_oneline:<br>
+static char *ft_get_oneline(char *buffer)<br>
+Extract the target line(up to and including the newline character) from the buffer as the return value.<br>
 
-4. Subfunction for ft_to_nextline:<br>
-static char *ft_to_nextline(char *read_buf), used to jump over the already extracted line and set the index to the start of the next line.
+7. Subfunction for ft_to_nextline:<br>
+static char *ft_to_nextline(char *buffer)<br>
+Move the buffer pointer to the start of the next line in buffer.<br>
 
 ## Everything is a file
 Linux abstracts and treats most system resources (like hardware devices, directories, and even processes) as files.<br>
