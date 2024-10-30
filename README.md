@@ -95,3 +95,15 @@ This command will concatenate the contents of file1.txt and file2.txt and save t
 ## Error Handling
 1. If the return value of the subfunction could be NULL;
 2. If you have used the function malloc————Always remember to add the error handling and memory-free part.
+
+## Read
+Function signature: ssize_t read(int fd, void *buf, size_t count)<br>
+1. Return Value: <br>
+read will return the number of bytes (or characters) successfully read into the buffer.<br>
+(1) Positive: Indicates the number of bytes read. This could be less than the requested amount if fewer bytes are available.<br>
+(2) 0: Signifies that the end of the file (EOF) has been reached.<br>
+(3) -1: Indicates an error. Common errors include invalid file descriptor (EBADF), permissions error (EACCES), or interrupted system call (EINTR).<br>
+
+
+2. Data Transfer to Buffer:<br>
+read will transfer the data directly into the buffer you specify. If read succeeds, the buffer will contain up to the number of bytes you requested, with the actual number of bytes read indicated by the return value.
