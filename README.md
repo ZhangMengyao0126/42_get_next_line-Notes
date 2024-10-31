@@ -144,5 +144,7 @@ In C, when you pass a pointer to a function, you pass the pointer by value. This
 |Allocation Method|Local variable declaration|malloc, calloc, free|
 |Lifetime|Function scope|Until freed explicitly|
 |Size|Limited (can overflow)|Larger but can be fragmented|
-|Speed|Fast access|Slower access|
+|Speed|Fast access(Last In, First Out structure)|Slower access(the need for pointer dereferencing and the overhead of managing free memory)|
+
+Function scope: refers to the accessibility and lifetime of variables defined within a function.<br>
  
