@@ -119,7 +119,7 @@ read will transfer the data directly into the buffer you specify. If read succee
 (2) &: address-of sign, get the address of a variable.<br>
 (3) * and & are inverse operations.<br>
 
-##ft_free(void **str)
+## ft_free(void **str)
 1. ft_free(void *str)<br>
 {<br>
     free(str);<br>
