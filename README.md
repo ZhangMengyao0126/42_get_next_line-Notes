@@ -126,7 +126,7 @@ read will transfer the data directly into the buffer you specify. If read succee
     *str = NULL;<br>
     return(NULL);<br>
 }<br>
-//This doesn't change the address that str holds, but changes the value of the address.
+This doesn't change the address that str holds, but changes the value of the address.
 
 2. ft_free(void *str)<br>
 {<br>
@@ -134,7 +134,7 @@ read will transfer the data directly into the buffer you specify. If read succee
     str = NULL;<br>
     return(NULL);<br>
 }<br>
-This doesn't change the address that the original str holds, but changes the address that the local copy str within this function holds.
+This doesn't change the address that the original str holds, but changes the address that the local copy str within this function holds.<br>
 In C, when you pass a pointer to a function, you pass the pointer by value. This means a copy of the pointer is made in the function's stack frame. Any changes made to the pointer itself (the address it holds) inside the function will not affect the original pointer outside the function unless you pass the address of the pointer itself.
 
  
