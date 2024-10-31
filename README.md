@@ -137,4 +137,12 @@ This doesn't change the address that str holds, but changes the value of the add
 This doesn't change the address that the original str holds, but changes the address that the local copy str within this function holds.<br>
 In C, when you pass a pointer to a function, you pass the pointer by value. This means a copy of the pointer is made in the function's stack frame. Any changes made to the pointer itself (the address it holds) inside the function will not affect the original pointer outside the function unless you pass the address of the pointer itself.
 
+## Stack & Heap
+|Feature|Stack|Heap|
+|:---:|:---:|:---:|
+|Memory Management|Automatic (managed by the compiler)|Manual (managed by the programmer)|
+|Allocation Method|Local variable declaration|malloc, calloc, free|
+|Lifetime|Function scope|Until freed explicitly|
+|Size|Limited (can overflow)|Larger but can be fragmented|
+|Speed|Fast access|Slower access|
  
