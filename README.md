@@ -107,3 +107,44 @@ read will return the number of bytes (or characters) successfully read into the 
 
 2. Data Transfer to Buffer:<br>
 read will transfer the data directly into the buffer you specify. If read succeeds, the buffer will contain up to the number of bytes you requested, with the actual number of bytes read indicated by the return value.
+
+## char *ptr ; *ptr ; &c
+1. char *ptr:<br>
+(1) char: the type of variable that the pointer is pointing to, which means ptr holds the address of such variable.<br>
+(2) *: the sign of a pointer.<br>
+(3) ptr: the pointer's name.<br>
+
+2. ptr = &c, *ptr = c<br>
+(1) *: dereference sign, access the value at a given address.<br>
+(2) &: address-of sign, get the address of a variable.<br>
+(3) * and & are inverse operations.<br>
+
+## ft_free(void **str)
+1. ft_free(void *str)<br>
+{<br>
+    free(str);<br>
+    *str = NULL;<br>
+    return(NULL);<br>
+}<br>
+This doesn't change the address that str holds, but changes the value of the address.
+
+2. ft_free(void *str)<br>
+{<br>
+    free(str);<br>
+    str = NULL;<br>
+    return(NULL);<br>
+}<br>
+This doesn't change the address that the original str holds, but changes the address that the local copy str within this function holds.<br>
+In C, when you pass a pointer to a function, you pass the pointer by value. This means a copy of the pointer is made in the function's stack frame. Any changes made to the pointer itself (the address it holds) inside the function will not affect the original pointer outside the function unless you pass the address of the pointer itself.
+
+## Stack & Heap
+|Feature|Stack|Heap|
+|:---:|:---:|:---:|
+|Memory Management|Automatic (managed by the compiler)|Manual (managed by the programmer)|
+|Allocation Method|Local variable declaration|malloc, calloc, free|
+|Lifetime|Function scope|Until freed explicitly|
+|Size|Limited (can overflow)|Larger but can be fragmented|
+|Speed|Fast access(Last In, First Out structure)|Slower access(the need for pointer dereferencing and the overhead of managing free memory)|
+
+Function scope: refers to the accessibility and lifetime of variables defined within a function.<br>
+ 
