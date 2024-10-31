@@ -114,7 +114,7 @@ read will transfer the data directly into the buffer you specify. If read succee
 (2) *: the sign of a pointer.<br>
 (3) ptr: the pointer's name.<br>
 
-2. ptr = &c, *ptr = c;<br>
+2. ptr = &c, *ptr = c<br>
 (1) *: dereference sign, access the value at a given address.<br>
 (2) &: address-of sign, get the address of a variable.<br>
 (3) * and & are inverse operations.<br>
