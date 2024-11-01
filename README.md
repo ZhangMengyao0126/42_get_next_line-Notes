@@ -148,3 +148,8 @@ In C, when you pass a pointer to a function, you pass the pointer by value. This
 
 Function scope: refers to the accessibility and lifetime of variables defined within a function.<br>
  
+## size_t & ssize_t
+|Type|Signedness|Common Use|Error Handling|
+|:---:|:---:|:---:|:---:|
+|size_t|Unsigned|Memory sizes, array indexing|Cannot represent errors (only non-negative values)|
+|ssize_t|Signed|Read/write counts, function returns|Can represent errors (negative values)|
