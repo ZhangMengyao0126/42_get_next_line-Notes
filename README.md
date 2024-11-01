@@ -17,7 +17,7 @@ static char *ft_get_buffer(int fd, char *buffer)<br>
 Set the buffer and read data until it encounters a newline ('\n') or reaches the end of the file (including our target line) from the file descriptor and adds the data to buffer.
 
 5. Subfunction for ft_get_oneline:<br>
-static char *ft_get_oneline(char *buffer)<br>
+static char *ft_refresh_buffer(char *buffer)<br>
 Extract the target line(up to and including the newline character) from the buffer as the return value.<br>
 
 7. Subfunction for ft_to_nextline:<br>
