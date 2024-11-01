@@ -3,7 +3,7 @@
 static char *ft_get_buffer(int fd, char *buffer)
 {
     char *temp_buffer;
-    size_t chars;
+    ssize_t chars;
 
     chars = 1;
     temp_buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
@@ -103,7 +103,7 @@ char *get_next_line(int fd)
     oneline = ft_get_oneline(buffer);
     //Second step: Extract the target line from the buffer as the return value.
     if (!oneline)
-        return(ft_free(&buffer)) 
+        return(ft_free(&buffer));
     //Error: Fail to extract the line————the return value of ft_get_one_line is NULL.
     //Memory-Free: Free the buffer we set earlier.
     buffer = ft_to_nextline(buffer);
