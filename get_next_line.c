@@ -15,7 +15,7 @@ static char *ft_get_buffer(int fd, char *buffer)
     //when the function starts(especially if it’s being used to accumulate data across multiple calls,
     //as in a line-reading function). In that case, we also need to free it.
     }
-    while (!buffer || (buffer && chars) > 0 && !ft_strchr(buffer, '\n'))
+    while (!buffer || ((buffer && chars) > 0 && !ft_strchr(buffer, '\n')))
     //"buffer > 0":
     //check if it's uninitialized (i.e., if it doesn't point to any allocated memory). 
     //This works because pointers in C can hold a "null" value, 
@@ -27,7 +27,7 @@ static char *ft_get_buffer(int fd, char *buffer)
             free(temp_buffer);
             return(ft_free(&buffer));
         }
-        if (chars = 0)//For reaching the end of the file
+        if (chars == 0)//For reaching the end of the file
             break;
         temp_buffer[chars] = '\0';
         buffer = ft_strjoin(buffer, temp_buffer);
@@ -106,7 +106,7 @@ char *get_next_line(int fd)
         return(ft_free(&buffer));
     //Error: Fail to extract the line————the return value of ft_get_one_line is NULL.
     //Memory-Free: Free the buffer we set earlier.
-    buffer = ft_to_nextline(buffer);
+    buffer = ft_refresh_buffer(buffer);
     //Third step: Move the buffer pointer to the start of the next line in buffer.
     return(oneline);
 }

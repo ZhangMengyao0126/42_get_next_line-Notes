@@ -8,7 +8,7 @@ char *ft_free(char **str)
 }
 
 
-char *ft_strchr(const unsigned char *s, int c)
+char *ft_strchr(const char *s, int c)
 //ft_strchr: String character, searches for the first occurrence of a character 'c' in a string 's'.
 
 //const char *: 
@@ -28,7 +28,7 @@ char *ft_strchr(const unsigned char *s, int c)
     i = 0;
     while (s[i] != '\0')
     {
-        if (s[i] == (unsigned char)c)
+        if (((unsigned char *)s)[i] == (unsigned char)c)
         //(unsigned char): To keep the value type in the comparition consistent.
             return((char *)s + i);
             //(char *): To keep the return value type consistent
