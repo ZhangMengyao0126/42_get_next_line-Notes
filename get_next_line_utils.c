@@ -69,19 +69,14 @@ char* ft_strjoin(char *s1, char*s2)
     i = 0;
     j = 0;
     while (s1[i] != '\0')
-    {
-        new_str[i] = s1[i];
-        i++;
-    }
+        new_str[i++] = s1[j++];
+    j = 0;
     while (s2[j] != '\0')
-    {
-        new_str[i + j] = s2[j];
-        j++;
-    }
-    new_str[i + j] = '\0';
-    free(s1);
+        new_str[i++] = s2[j++];
+    new_str[i] = '\0';
+    return(free(s1), new_str);
+    //Write in this way to avoid norminette too many lines warning
     //Remember to free the memory every time you use malloc.
-    return(new_str);
 }
 
 size_t ft_strlen(const char *s, char c)

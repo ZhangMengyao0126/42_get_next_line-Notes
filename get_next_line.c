@@ -76,8 +76,10 @@ static char *ft_refresh_buffer(char *buffer)
     //For the error handling————Set the pointer to NULL address, indicating the error.
         return (ft_free(&buffer));
     }
-    refresh_buffer = ft_substr(buffer, (i + 1), (ft_strlen(buffer, '\0') - (i + 1)));
+    refresh_buffer = ft_substr(buffer, (i + 1),
+                                ft_strlen(buffer, '\0') - (i + 1));
     //To refresh the buffer, excluding the oneline we've already extracted.
+    //Write in this way to avoid norminette too many lines warning.
     if (!refresh_buffer)
         return (ft_free(&buffer));
     ft_free (&buffer);
