@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-ft_free(void **str)
+char *ft_free(char **str)
 {
     free(*str);
     *str = NULL;
@@ -88,7 +88,7 @@ char* ft_strjoin(char *s1, char*s2)
     return(new_str);
 }
 
-size_t ft_strlen(char *s, int c)
+size_t ft_strlen(const char *s, char c)
 {
     size_t i;
 
@@ -101,7 +101,7 @@ size_t ft_strlen(char *s, int c)
     return(i);
 }
 
-char *ft_substr(char *src, size_t start, size_t len)
+char *ft_substr(const char *src, size_t start, size_t len)
 {
     char *dst;
     size_t src_len;
