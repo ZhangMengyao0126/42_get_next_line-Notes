@@ -60,6 +60,11 @@ static char *ft_refresh_buffer(char *buffer)
     size_t i;
 
     i = 0;
+    if (!buffer)
+    {
+        refresh_buffer = NULL;
+        return (ft_free(&buffer));
+    }
     while (buffer[i] && buffer[i] != '\n')
         i++;
     //To find the index of the first '\n'

@@ -30,7 +30,7 @@ char *ft_strchr(const char *s, int c)
     {
         if (((unsigned char *)s)[i] == (unsigned char)c)
         //(unsigned char): To keep the value type in the comparition consistent.
-            return ((char *)s + i);
+            return ((char *)(s + i));
             //(char *): To keep the return value type consistent
             //s + i: Pointer arithmetic, move the pointer to the position we want.
         i++;
@@ -63,12 +63,9 @@ char* ft_strjoin(char *s1, char*s2)
     new_str = (char *)malloc(sizeof(char) * (length + 1));
     //lenth + 1: For '\0' at the end of the new_str. This follows C convention.
     if (!new_str)
-    {
-        free (s1);
-        return (NULL);
+        return (ft_free(&s1));
         //Remember to free the memory every time you use malloc.
         //Remember to add error handling every time you use malloc.
-    }
     i = 0;
     j = 0;
     while (s1[i] != '\0')
@@ -79,7 +76,6 @@ char* ft_strjoin(char *s1, char*s2)
     while (s2[j] != '\0')
     {
         new_str[i + j] = s2[j];
-        i++;
         j++;
     }
     new_str[i + j] = '\0';
@@ -96,7 +92,7 @@ size_t ft_strlen(const char *s, char c)
     if (!s)
         return(0);
         //Since the purpose of the function is to return a size, we return 0 here instead of NULL.
-    while (s[i] != c)
+    while (s[i] && s[i] != c)
         i++;
     return (i);
 }
@@ -123,7 +119,7 @@ char *ft_substr(const char *src, size_t start, size_t len)
         return (dst);
     }
     src_len = ft_strlen(src, '\0');
-    if (len > src_len - start)
+    if (len > (src_len - start))
         len = src_len - start;
     //In common situation: For the len is out of bounds.
     //In get_next_line:
