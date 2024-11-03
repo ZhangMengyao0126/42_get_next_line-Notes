@@ -2,9 +2,9 @@
 
 char *ft_free(char **str)
 {
-    free(*str);
+    free (*str);
     *str = NULL;
-    return(NULL);
+    return (NULL);
 }
 
 
@@ -30,12 +30,12 @@ char *ft_strchr(const char *s, int c)
     {
         if (((unsigned char *)s)[i] == (unsigned char)c)
         //(unsigned char): To keep the value type in the comparition consistent.
-            return((char *)s + i);
+            return ((char *)s + i);
             //(char *): To keep the return value type consistent
             //s + i: Pointer arithmetic, move the pointer to the position we want.
         i++;
     }
-    return(NULL);
+    return (NULL);
 }
 
 char* ft_strjoin(char *s1, char*s2)
@@ -64,8 +64,8 @@ char* ft_strjoin(char *s1, char*s2)
     //lenth + 1: For '\0' at the end of the new_str. This follows C convention.
     if (!new_str)
     {
-        free(s1);
-        return(NULL);
+        free (s1);
+        return (NULL);
         //Remember to free the memory every time you use malloc.
         //Remember to add error handling every time you use malloc.
     }
@@ -96,9 +96,9 @@ size_t ft_strlen(const char *s, char c)
     if (!s)
         return(0);
         //Since the purpose of the function is to return a size, we return 0 here instead of NULL.
-    while(s[i] != c)
+    while (s[i] != c)
         i++;
-    return(i);
+    return (i);
 }
 
 char *ft_substr(const char *src, size_t start, size_t len)
@@ -108,7 +108,7 @@ char *ft_substr(const char *src, size_t start, size_t len)
     size_t i;
 
     if (!src)
-        return(NULL);
+        return (NULL);
     if (start >= ft_strlen(src, '\0'))
     //In common situation: For the index is out of bounds.
     //In get_next_line:
@@ -118,9 +118,9 @@ char *ft_substr(const char *src, size_t start, size_t len)
     {
         dst = (char *)malloc(sizeof(char));
         if (!dst)
-            return(NULL);
+            return (NULL);
         dst[0] = '\0';
-        return(dst);
+        return (dst);
     }
     src_len = ft_strlen(src, '\0');
     if (len > src_len - start)
@@ -130,7 +130,7 @@ char *ft_substr(const char *src, size_t start, size_t len)
     //Len = ft_strlen(buffer, '\0') - （i + 1), which is always true.
     dst = (char *)malloc(sizeof(char) * (len + 1));
     if(!dst)
-        return(NULL);
+        return (NULL);
     i = 0;
     while(i < len && start < src_len && src[start])
     {
