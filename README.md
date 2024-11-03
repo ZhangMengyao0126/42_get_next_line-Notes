@@ -151,5 +151,5 @@ Function scope: refers to the accessibility and lifetime of variables defined wi
 ## size_t & ssize_t
 |Type|Signedness|Common Use|Error Handling|
 |:---:|:---:|:---:|:---:|
-|size_t|Unsigned|Memory sizes, array indexing|Cannot represent errors (only non-negative values)|
+|size_t|Unsigned|Memory sizes, array indexing, array length|Cannot represent errors (only non-negative values)|
 |ssize_t|Signed|Read/write counts, function returns|Can represent errors (negative values)|
