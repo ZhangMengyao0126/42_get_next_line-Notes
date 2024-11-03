@@ -7,7 +7,7 @@ static char *ft_get_buffer(int fd, char *buffer)
 
     chars = 1;
     temp_buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
-    if(!temp_buffer)
+    if (!temp_buffer)
     {
         return(ft_free(&buffer));
     //Use "ft_free(&buffer)" instead of "NULL": 
@@ -15,26 +15,26 @@ static char *ft_get_buffer(int fd, char *buffer)
     //when the function starts(especially if it’s being used to accumulate data across multiple calls,
     //as in a line-reading function). In that case, we also need to free it.
     }
-    while(!buffer || (buffer && chars) > 0 && !ft_strchr(buffer, '\n'))
+    while (!buffer || (buffer && chars) > 0 && !ft_strchr(buffer, '\n'))
     //"buffer > 0":
     //check if it's uninitialized (i.e., if it doesn't point to any allocated memory). 
     //This works because pointers in C can hold a "null" value, 
     //typically represented by NULL or 0, to indicate that they don't point to a valid memory address.
     {
         chars = read(fd, temp_buffer, BUFFER_SIZE);
-        if(chars < 0)//For error
+        if (chars < 0)//For error
         {
             free(temp_buffer);
             return(ft_free(&buffer));
         }
-        if(chars = 0)//For reaching the end of the file
+        if (chars = 0)//For reaching the end of the file
             break;
         temp_buffer[chars] = '\0';
         buffer = ft_strjoin(buffer, temp_buffer);
     }
     free(temp_buffer);
     //Remember to free the buffer asap.
-    if(!buffer)
+    if (!buffer)
         return(NULL);
     //For nothing left to read.
     return(buffer);
@@ -47,11 +47,11 @@ static char *ft_get_oneline(char *buffer)
 
     len = ft_strlen(buffer, '\n');
     //The index will stop right before '\n'
-    if(buffer[len] == '\n')
+    if (buffer[len] == '\n')
         len++;
     //Since oneline need to include '\n', we need to check if there's a '\n' here.
     oneline = ft_substr(buffer, 0, len);
-    if(!oneline)
+    if (!oneline)
         return(NULL);
     return(oneline);
 }
@@ -62,10 +62,10 @@ static char *ft_refresh_buffer(char *buffer)
     size_t i;
 
     i = 0;
-    while(buffer[i] && buffer[i] != '\n')
+    while (buffer[i] && buffer[i] != '\n')
         i++;
     //To find the index of the first '\n'
-    if(!buffer[i] || !buffer[i + 1])
+    if (!buffer[i] || !buffer[i + 1])
     //!buffer[i]: For no content at all;
     //!buffer[i + 0]: For no content after the first '\n', meaning there is no nextline. 
     {
@@ -75,7 +75,7 @@ static char *ft_refresh_buffer(char *buffer)
     }
     refresh_buffer = ft_substr(buffer, (i + 1), (ft_strlen(buffer, '\0') - (i + 1)));
     //To refresh the buffer, excluding the oneline we've already extracted.
-    if(!refresh_buffer)
+    if (!refresh_buffer)
     {
         refresh_buffer = NULL;
         return(ft_free(&buffer));
