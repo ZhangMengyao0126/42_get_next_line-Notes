@@ -67,10 +67,10 @@ static char *ft_refresh_buffer(char *buffer)
     }
     while (buffer[i] && buffer[i] != '\n')
         i++;
-    //To find the index of the first '\n'
+    //To find the index of the end of the file or the first '\n'
     if (!buffer[i] || !buffer[i + 1])
-    //!buffer[i]: For no content at all;
-    //!buffer[i + 0]: For no content after the first '\n', meaning there is no nextline. 
+    //!buffer[i]: Follows buffer[i], for no content after the end of the file;
+    //!buffer[i + 0]: Follows buffer[i] !='\n', for no content after the first '\n', meaning there is no nextline. 
     {
         refresh_buffer = NULL;
     //For the error handling————Set the pointer to NULL address, indicating the error.
